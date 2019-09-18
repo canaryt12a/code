@@ -1,0 +1,13 @@
+private static Size MeasureString(string candidate, TextBlock textBlock)
+        {
+            var formattedText = new FormattedText(
+                candidate,
+                CultureInfo.CurrentCulture,
+                System.Windows.FlowDirection.LeftToRight,
+                new Typeface(textBlock.FontFamily, textBlock.FontStyle, textBlock.FontWeight, textBlock.FontStretch),
+                textBlock.FontSize,
+                Brushes.Black,
+                new NumberSubstitution());
+
+            return new Size(formattedText.Width, formattedText.Height);
+        }
